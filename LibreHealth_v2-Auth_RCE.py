@@ -12,7 +12,7 @@ import requests, sys, re
 from colorama import Fore, Back, Style
 
 requests.packages.urllib3.disable_warnings(requests.packages.urllib3.exceptions.InsecureRequestWarning)
-proxies = {'http':'http://127.0.0.1:8080','https':'http://127.0.0.1:8080'}
+#proxies = {'http':'http://127.0.0.1:8080','https':'http://127.0.0.1:8080'}
 F = [Fore.RESET,Fore.BLACK,Fore.RED,Fore.GREEN,Fore.YELLOW,Fore.BLUE,Fore.MAGENTA,Fore.CYAN,Fore.WHITE]
 B = [Back.RESET,Back.BLACK,Back.RED,Back.GREEN,Back.YELLOW,Back.BLUE,Back.MAGENTA,Back.CYAN,Back.WHITE]
 S = [Style.RESET_ALL,Style.DIM,Style.NORMAL,Style.BRIGHT]
@@ -92,7 +92,8 @@ if __name__ == "__main__":
         print(err+'Cannot connect to the server and create a web session.')
     login_data = {'new_login_session_management':'1', 'authProvider':'Default','authUser':USERNAME,'clearPass':PASSWORD,'languageChoice':'1'}
     print(info+"Attempting to Login to LibreHealth with credentials: "+USERNAME+":"+PASSWORD)
-    auth = s.post(url=LOGIN_POST, data=login_data, verify=False, proxies=proxies)
+#    auth = s.post(url=LOGIN_POST, data=login_data, verify=False, proxies=proxies)
+    auth = s.post(url=LOGIN_POST, data=login_data, verify=False)
     loginchk  = str(re.findall(r'Calendar', auth.text))
     if loginchk == "[u'Calendar', u'Calendar']":
         print(ok+"Login successful.")
