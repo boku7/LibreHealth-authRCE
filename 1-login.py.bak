@@ -1,0 +1,23 @@
+import requests, sys, re
+from colorama import Fore, Back, Style
+
+requests.packages.urllib3.disable_warnings(requests.packages.urllib3.exceptions.InsecureRequestWarning)
+
+C = [Style.RESET_ALL, Fore.RESET, Style.BRIGHT, Fore.BLUE, Fore.RED, Fore.GREEN, Fore.YELLOW]
+info = C[2]+C[3]+'['+C[0]+C[2]+'+'+C[2]+C[3]+']'+C[0]+' '
+err  = C[2]+C[4]+'['+C[0]+C[2]+'!'+C[2]+C[4]+']'+C[0]+' '
+
+if __name__ == "__main__":
+    SERVER_URL = 'http://172.16.65.130/LibreEHR/'
+    if not re.match(r".*/$", SERVER_URL):
+        SERVER_URL = SERVER_URL+'/'
+    LOGIN_URL  = SERVER_URL+'interface/login/login.php'
+    s = requests.Session()
+    s.get(LOGIN_URL, verify=False)
+#    if get_session.status_code == 200:
+#        print(ok+'Successfully connected to server and created session.')
+#        print(info+get_session.headers['Set-Cookie'])
+#    else:
+#        print(err+'Cannot connect to the server and create a web session.')
+    quit()
+

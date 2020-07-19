@@ -1,0 +1,40 @@
+POST /LibreEHR/interface/new/new_comprehensive_save.php HTTP/1.1
+
+Host: 172.16.65.130
+
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+
+Accept-Language: en-US,en;q=0.5
+
+Accept-Encoding: gzip, deflate
+
+Content-Type: multipart/form-data; boundary=---------------------------12718031891909722807922749014
+
+Content-Length: 18678
+
+DNT: 1
+
+Connection: close
+
+Referer: http://172.16.65.130/LibreEHR/interface/new/new_comprehensive.php
+
+Cookie: LibreHealthEHR=vojq7rarhl0tc3s4ivqr0g88gm
+
+Upgrade-Insecure-Requests: 1
+
+
+
+-----------------------------12718031891909722807922749014
+
+Content-Disposition: form-data; name="profile_picture"; filename="small.png"
+
+Content-Type: image/png
+
+
+
+PNG
+
+
+
